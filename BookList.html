@@ -13,6 +13,17 @@ margin:0px;
 input{padding:6px 40px;margin:10px 0px;}
 
 </style>
+<script>
+	function passvalues()
+	{
+		var  texttitle = document.getElementById('title').value;
+		var  textAuthor = document.getElementById('Author').value;
+		var  textid = document.getElementById('id').value;
+		document.getElementById('d1').innerHTML=texttitle
+		document.getElementById('d2').innerHTML=textAuthor
+		document.getElementById('d3').innerHTML=textid
+	}
+</script>
 </head>
 <body>
 <div class='body'>
@@ -25,17 +36,22 @@ input{padding:6px 40px;margin:10px 0px;}
 			<input type='text' id='author'><br>
 			<label>Id</label><br>
 			<input type='text' id='id'><br>
-			<input type='button' value='Add Book'>
+			<button onclick='passvalues()'>Submit</button>
 		</form>
 	</div>
 	<div class='outputbody'>
 	<hr>
-	<div class='table'>
+	<div id='td'>
 		<table align='center' style='width:60%'>
 			<tr>
 				<th>Title</th>
 				<th>Author</th>
 				<th>Id</th>
+			</tr>
+			<tr>
+				<td><span id='d1'></span></td>
+				<td><span id='d2'></span></td>
+				<td><span id='d3'></span></td>
 			</tr>
 		</table>
 	</div>
