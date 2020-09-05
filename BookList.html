@@ -11,17 +11,22 @@ margin:0px;
 .bookcolor{color:#2ad8e8;}
 .formtext{margin-left:40%;}
 input{padding:6px 40px;margin:10px 0px;}
-
+table tr{background-color:#2ad8e8;text-align:center;}
 </style>
 <script>
 	function passvalues()
 	{
-		var  texttitle = document.getElementById('title').value;
-		var  textAuthor = document.getElementById('Author').value;
-		var  textid = document.getElementById('id').value;
-		document.getElementById('d1').innerHTML=texttitle
-		document.getElementById('d2').innerHTML=textAuthor
-		document.getElementById('d3').innerHTML=textid
+		/*var  texttitle = document.getElementById("title").value;
+		var  textAuthor = document.getElementById("Author").value;
+		var  textid = document.getElementById("id").value;
+		
+		document.getElementById('d1').innerHTML=texttitle;
+		document.getElementById('d2').innerHTML=textAuthor;
+		document.getElementById('d3').innerHTML=textid;*/
+		
+		document.getElementById('d1').innerHTML = document.myform.title.value;
+		document.getElementById('d2').innerHTML = document.myform.author.value;
+		document.getElementById('d3').innerHTML = document.myform.id.value;
 	}
 </script>
 </head>
@@ -29,14 +34,14 @@ input{padding:6px 40px;margin:10px 0px;}
 <div class='body'>
 	<h1 align='center'>My<span class='bookcolor'>Book</span>List</h1>
 	<div class='formtext'>
-		<form>
+		<form name='myform'>
 			<label>Book Title</label><br>
-			<input type='text' id='title'><br>
+			<input type='text' name='title'><br>
 			<label>Author</label><br>
-			<input type='text' id='author'><br>
+			<input type='text' name='author'><br>
 			<label>Id</label><br>
-			<input type='text' id='id'><br>
-			<button onclick='passvalues()'>Submit</button>
+			<input type='text' name='id'><br>
+			<button onclick='passvalues(); return false'>Submit</button>
 		</form>
 	</div>
 	<div class='outputbody'>
